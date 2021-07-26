@@ -1,7 +1,6 @@
 from os import system
-import sys
 
-
+#function for clearing the terminal, displaying certain strings and for resetting the grid to its default state
 
 def title_display():
     system('cls')
@@ -27,18 +26,23 @@ def grid_display():
     system('cls')
     print(tictactoe_grid)
 
+#class for the two players to store information in
 
 class Player():
     def __init__(self, name, symbol):
         self.name = name
         self.symbol = symbol
 
+#class for the seperate gridfields to make analysing the win condition easier
+
 class Field():
     def __init__(self, pos, index):
         self.pos = pos
         self.index = index
         self.value = tictactoe_grid[self.index]
-        
+
+#function for updating the value of each Field
+
 def field_update():
     Field_1.value = tictactoe_grid[Field_1.index]
     Field_2.value = tictactoe_grid[Field_2.index]
@@ -50,6 +54,8 @@ def field_update():
     Field_8.value = tictactoe_grid[Field_8.index]
     Field_9.value = tictactoe_grid[Field_9.index]
 
+#function for resetting most of the game variables to their default state
+
 def game_reset():
     global gamestatus
     gamestatus = True
@@ -60,6 +66,8 @@ def game_reset():
     active_player = Player_1
     field_update
 
+#function for displaying the winner screen
+
 def postwin_function(num):
     title_display()
     print(tictactoe_grid)
@@ -67,11 +75,13 @@ def postwin_function(num):
     global gamestatus
     gamestatus = False
 
+#main codeblock
 quitstatus = True
 Player_1 = Player('Player 1', 'X')
 Player_2 = Player('Player 2', 'O')
 valid_numbers = ['1','2', '3', '4', '5', '6', '7', '8', '9']
 
+#main menu
 title_display()
 while quitstatus:
     game_reset()
@@ -87,7 +97,9 @@ while quitstatus:
         Field_8 = Field(8, 143)
         Field_9 = Field(9, 149)
         grid_display()
+#menu once in game
         while gamestatus:
+#win conditions
             if Field_1.value == 'X' and Field_2.value == 'X' and Field_3.value == 'X':
                 postwin_function(1)
 
@@ -135,14 +147,14 @@ while quitstatus:
 
             elif Field_4.value == 'O' and Field_5.value == 'O' and Field_6.value == 'O':
                 postwin_function(2)
-
+#draw condition
             elif str(Field_1.pos) != Field_1.value and str(Field_2.pos) != Field_2.value and str(Field_3.pos) != Field_3.value and str(Field_4.pos) != Field_4.value and str(Field_5.pos) != Field_5.value and str(Field_6.pos) != Field_6.value and str(Field_7.pos) != Field_7.value and str(Field_8.pos) != Field_8.value and str(Field_9.pos) != Field_9.value:
                 title_display()
                 print(tictactoe_grid)
                 print('\tIt`s a draw!')
                 gamestatus = False
                 
-
+#player input checker
             else:
                 chosen_num_index = ''
                 number_input = input(f"\n\n{active_player.name}, input the number of the field you want to mark or type 'q' to Quit: ")
