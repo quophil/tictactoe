@@ -68,7 +68,7 @@ def game_reset():
 
 #function for displaying the winner screen
 
-def postwin_function(num):
+def postwin_print(num):
     title_display()
     print(tictactoe_grid)
     print(f'\tPlayer {num} has won!')
@@ -101,52 +101,52 @@ while quitstatus:
         while gamestatus:
 #win conditions
             if Field_1.value == 'X' and Field_2.value == 'X' and Field_3.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_1.value == 'X' and Field_4.value == 'X' and Field_7.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_1.value == 'X' and Field_5.value == 'X' and Field_9.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_2.value == 'X' and Field_5.value == 'X' and Field_8.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_1.value == 'X' and Field_5.value == 'X' and Field_9.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_3.value == 'X' and Field_5.value == 'X' and Field_7.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_3.value == 'X' and Field_6.value == 'X' and Field_9.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
 
             elif Field_4.value == 'X' and Field_5.value == 'X' and Field_6.value == 'X':
-                postwin_function(1)
+                postwin_print(1)
             
             elif Field_1.value == 'O' and Field_2.value == 'O' and Field_3.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
                     
             elif Field_1.value == 'O' and Field_4.value == 'O' and Field_7.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 
             elif Field_1.value == 'O' and Field_5.value == 'O' and Field_9.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 
             elif Field_2.value == 'O' and Field_5.value == 'O' and Field_8.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 
             elif Field_1.value == 'O' and Field_5.value == 'O' and Field_9.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 
             elif Field_3.value == 'O' and Field_5.value == 'O' and Field_7.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 
             elif Field_3.value == 'O' and Field_6.value == 'O' and Field_9.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 
             elif Field_4.value == 'O' and Field_5.value == 'O' and Field_6.value == 'O':
-                postwin_function(2)
+                postwin_print(2)
 #draw condition
             elif str(Field_1.pos) != Field_1.value and str(Field_2.pos) != Field_2.value and str(Field_3.pos) != Field_3.value and str(Field_4.pos) != Field_4.value and str(Field_5.pos) != Field_5.value and str(Field_6.pos) != Field_6.value and str(Field_7.pos) != Field_7.value and str(Field_8.pos) != Field_8.value and str(Field_9.pos) != Field_9.value:
                 title_display()
