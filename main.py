@@ -4,11 +4,11 @@ from os import system
 
 def title_display():
     system('cls')
-    print('\t\t###############')
-    print('\t\t# Tic  O   X  #')
-    print('\t\t#  O  Tac  X  #')
-    print('\t\t#  X   O  Toe #')
-    print('\t\t###############')
+    print('\t###############')
+    print('\t# Tic  O   X  #')
+    print('\t#  O  Tac  X  #')
+    print('\t#  X   O  Toe #')
+    print('\t###############')
 
 def grid_reset():
     global tictactoe_grid
@@ -151,7 +151,7 @@ while quitstatus:
             elif str(Field_1.pos) != Field_1.value and str(Field_2.pos) != Field_2.value and str(Field_3.pos) != Field_3.value and str(Field_4.pos) != Field_4.value and str(Field_5.pos) != Field_5.value and str(Field_6.pos) != Field_6.value and str(Field_7.pos) != Field_7.value and str(Field_8.pos) != Field_8.value and str(Field_9.pos) != Field_9.value:
                 title_display()
                 print(tictactoe_grid)
-                print('\tIt`s a draw!')
+                print('\n\tIt`s a draw!')
                 gamestatus = False
                 
 #player input checker
@@ -188,5 +188,5 @@ while quitstatus:
 
     else:
         title_display()
-        print('\nPlease enter a valid input')
+        print('\n\nPlease enter a valid input')
         
