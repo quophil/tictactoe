@@ -120,15 +120,16 @@ while quitstatus:
                         postwin_print(2)
 
 #draw condition
-            draw_counter = 0
-            for i in field_list:
-                if i.value not in valid_numbers:
-                    draw_counter += 1
-                elif draw_counter == len(field_list):
-                    title_display()
-                    print(tictactoe_grid)
-                    print('\n\tIt`s a draw!')
-                    gamestatus = False
+            if gamestatus:
+                draw_counter = 0
+                for i in field_list:
+                    if i.value not in valid_numbers:
+                        draw_counter += 1
+                    if draw_counter == len(field_list):
+                        title_display()
+                        print(tictactoe_grid)
+                        print('\n\tIt`s a draw!')
+                        gamestatus = False
 
 #player input checker 
             if gamestatus:
